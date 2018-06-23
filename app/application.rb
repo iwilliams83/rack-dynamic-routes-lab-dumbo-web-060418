@@ -10,6 +10,7 @@ class Application
       item = req.path.split("/items/").last
       puts "this item is #{item}"
       if @@items.include?(item)
+        puts "Does #{@@items} contain #{item}"
         item = @@items.find{|i| i.name == item}
         resp.write item.price
       # else
