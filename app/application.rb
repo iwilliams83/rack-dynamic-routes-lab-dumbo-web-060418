@@ -14,7 +14,7 @@ class Application
         if i.name == item
           resp.write i.price
           resp.status = 200
-          resp.finish
+          return
         else
           puts "item #{item} was not found"
           resp.write "Item not found"
