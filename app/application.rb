@@ -7,9 +7,9 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match(/items/)
-      item = req.path.split("/items/").last
+      item_name = req.path.split("/items/").last
       item = @@items.each do |i|
-        i.name == item
+        i.name == item_name
       end
         if !item.nil?
           resp.write item.price
