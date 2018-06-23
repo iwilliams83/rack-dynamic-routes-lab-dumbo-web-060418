@@ -9,8 +9,8 @@ class Application
     if req.path.match(/items/)
       item = req.path.split("/items/").last
       puts "this item is #{item}"
+      puts "@@items = #{@@items}"
       if @@items.include?(item)
-        puts "Does #{@@items} contain #{item}"
         item = @@items.find{|i| i.name == item}
         resp.write item.price
       # else
