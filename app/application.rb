@@ -12,6 +12,7 @@ class Application
       @@items.each do |i|
         if i.name == item
           resp.write i.price
+          resp.status = 200
         else
           resp.write "Item not found"
           resp.status = 400
