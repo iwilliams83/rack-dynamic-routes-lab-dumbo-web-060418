@@ -8,16 +8,13 @@ class Application
 
     if req.path.match(/items/)
       item = req.path.split("/items/").last
-      item = @@items.find{|i| i.name == item}
 
-      puts "Now this item is #{item.name}"
-
-      if @@items.include?(item)
-        item = @@items.find{|i| i.name == item}
-        resp.write item.price
-      # else
-      #   resp.write "Item not found"
-      #   resp.status = 400
+      @@items.each do |i|
+        if i.name == item
+          resp.write item.price
+        else
+          resp.write "Item not found"
+          resp.status = 400
       end
     else
       resp.write "Route not found"
