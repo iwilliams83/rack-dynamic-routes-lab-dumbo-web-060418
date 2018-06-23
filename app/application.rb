@@ -10,7 +10,9 @@ class Application
       item = req.path.split("/items/").last
 
       @@items.each do |i|
+        puts "i = #{i}"
         if i.name == item
+          puts "i.price = #{i.price}"
           resp.write i.price
           resp.status = 200
         else
