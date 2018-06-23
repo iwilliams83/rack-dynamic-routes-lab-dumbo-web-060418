@@ -10,7 +10,7 @@ class Application
       item = req.path.split("/items/").last
       item = @@items.find{|i| i.name == item}
 
-      puts "Now this item is #{item}"
+      puts "Now this item is #{item.name}"
 
       if @@items.include?(item)
         item = @@items.find{|i| i.name == item}
