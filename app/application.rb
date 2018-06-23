@@ -8,8 +8,10 @@ class Application
 
     if req.path.match(/items/)
       item = req.path.split("/items/").last
-      item = Item.find_by(name: item)
-        if @@items.include?(item)
+      item = @@items.each do |i|
+        i.name == item
+      end
+        if !item.nil?
           resp.write item.price
           resp.status = 200
         else
