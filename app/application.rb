@@ -11,7 +11,7 @@ class Application
       item = @@items.find{|i| i.name == item}
       resp.write item.price
     else
-      puts "Route not found"
+      
       return 404
     end
 
