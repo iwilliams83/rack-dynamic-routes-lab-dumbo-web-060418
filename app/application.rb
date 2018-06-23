@@ -10,7 +10,7 @@ class Application
       item_name = req.path.split("/items/").last
       item = @@items.find do |i|
         i.name == item_name
-      end#.first
+      end
         if !item.nil?
           resp.write item.price
           resp.status = 200
