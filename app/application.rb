@@ -12,7 +12,7 @@ class Application
       resp.write item.price
     else
 
-      resp.write 404
+      resp.write 400 Route not found
     end
 
     resp.finish
