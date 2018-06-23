@@ -15,7 +15,6 @@ class Application
           puts "item found and price = #{i.price}"
           resp.write i.price
           resp.status = 200
-          return i.price
         else
           puts "item #{item} was not found"
           resp.write "Item not found"
