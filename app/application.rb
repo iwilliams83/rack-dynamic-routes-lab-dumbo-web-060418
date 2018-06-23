@@ -12,7 +12,7 @@ class Application
       return item.price
     else
       puts "Route not found"
-      resp.status = 404
+      return 404
     end
 
     resp.finish
