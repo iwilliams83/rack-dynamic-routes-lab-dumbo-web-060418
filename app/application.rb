@@ -11,8 +11,8 @@ class Application
       item = @@items.find{|i| i.name == item}
       resp.write item.price
     else
-      
-      return 404
+
+      resp.write 404
     end
 
     resp.finish
